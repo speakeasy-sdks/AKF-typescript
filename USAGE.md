@@ -1,12 +1,9 @@
 <!-- Start SDK Example Usage -->
 ```typescript
-import {
-  shared.NewPet,
-  AddPetResponse
-} from "PetStore/dist/sdk/models/operations";
-
-import { AxiosError } from "axios";
 import { SDK } from "PetStore";
+import { AddPetResponse, NewPet } from "PetStore/dist/sdk/models/operations";
+import { AxiosError } from "axios";
+
 const sdk = new SDK();
 
 const req: shared.NewPet = {
@@ -15,7 +12,9 @@ const req: shared.NewPet = {
 };
 
 sdk.addPet(req).then((res: AddPetResponse | AxiosError) => {
-   // handle response
+  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+    // handle response
+  }
 });
 ```
 <!-- End SDK Example Usage -->
