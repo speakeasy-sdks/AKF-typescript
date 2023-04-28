@@ -23,18 +23,15 @@ Creates a new pet in the store. Duplicates are allowed
 
 ```typescript
 import { SDK } from "PetStore";
-import { AddPetResponse, NewPet } from "PetStore/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { AddPetResponse } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: shared.NewPet = {
+sdk.sdk.addPet({
   name: "Dallas Kassulke",
   tag: "suscipit",
-};
-
-sdk.sdk.addPet(req).then((res: AddPetResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: AddPetResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -48,17 +45,14 @@ deletes a single pet based on the ID supplied
 
 ```typescript
 import { SDK } from "PetStore";
-import { DeletePetRequest, DeletePetResponse } from "PetStore/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { DeletePetResponse } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: DeletePetRequest = {
+sdk.sdk.deletePet({
   id: 437587,
-};
-
-sdk.sdk.deletePet(req).then((res: DeletePetResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: DeletePetResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -72,17 +66,14 @@ Returns a user based on a single ID, if the user does not have access to the pet
 
 ```typescript
 import { SDK } from "PetStore";
-import { FindPetByIdRequest, FindPetByIdResponse } from "PetStore/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { FindPetByIdResponse } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: FindPetByIdRequest = {
+sdk.sdk.findPetById({
   id: 297534,
-};
-
-sdk.sdk.findPetById(req).then((res: FindPetByIdResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: FindPetByIdResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
@@ -100,20 +91,17 @@ Sed tempus felis lobortis leo pulvinar rutrum. Nam mattis velit nisl, eu condime
 
 ```typescript
 import { SDK } from "PetStore";
-import { FindPetsRequest, FindPetsResponse } from "PetStore/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { FindPetsResponse } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: FindPetsRequest = {
+sdk.sdk.findPets({
   limit: 891773,
   tags: [
     "delectus",
   ],
-};
-
-sdk.sdk.findPets(req).then((res: FindPetsResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: FindPetsResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
