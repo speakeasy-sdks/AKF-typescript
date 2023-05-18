@@ -35,8 +35,8 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.10.0";
-  private _genVersion = "2.29.0";
+  private _sdkVersion = "1.11.0";
+  private _genVersion = "2.30.0";
   private _globals: any;
 
   constructor(props?: SDKProps) {
@@ -80,6 +80,9 @@ export class SDK {
     const headers = { ...reqBodyHeaders, ...config?.headers };
     if (reqBody == null || Object.keys(reqBody).length === 0)
       throw new Error("request body is required");
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
@@ -133,10 +136,16 @@ export class SDK {
 
     const client: AxiosInstance = this._defaultClient;
 
+    const headers = { ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url,
       method: "delete",
+      headers: headers,
       ...config,
     });
 
@@ -180,10 +189,16 @@ export class SDK {
 
     const client: AxiosInstance = this._defaultClient;
 
+    const headers = { ...config?.headers };
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url,
       method: "get",
+      headers: headers,
       ...config,
     });
 
@@ -235,12 +250,17 @@ export class SDK {
 
     const client: AxiosInstance = this._defaultClient;
 
+    const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
       url: url + queryParams,
       method: "get",
+      headers: headers,
       ...config,
     });
 
