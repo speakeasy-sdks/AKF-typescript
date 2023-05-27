@@ -9,11 +9,11 @@ import { Expose } from "class-transformer";
  * Pet to add to the store
  */
 export class NewPet extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tag" })
-  tag?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "tag" })
+    tag?: string;
 }

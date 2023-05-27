@@ -7,24 +7,24 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class AddPetResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * unexpected error
-   */
-  @SpeakeasyMetadata()
-  error?: shared.ErrorT;
+    /**
+     * unexpected error
+     */
+    @SpeakeasyMetadata()
+    error?: shared.ErrorT;
 
-  /**
-   * pet response
-   */
-  @SpeakeasyMetadata()
-  pet?: shared.Pet;
+    /**
+     * pet response
+     */
+    @SpeakeasyMetadata()
+    pet?: shared.Pet;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

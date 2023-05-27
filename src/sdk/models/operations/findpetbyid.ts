@@ -7,32 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class FindPetByIdRequest extends SpeakeasyBase {
-  /**
-   * ID of pet to fetch
-   */
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
-  id: number;
+    /**
+     * ID of pet to fetch
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: number;
 }
 
 export class FindPetByIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * unexpected error
-   */
-  @SpeakeasyMetadata()
-  error?: shared.ErrorT;
+    /**
+     * unexpected error
+     */
+    @SpeakeasyMetadata()
+    error?: shared.ErrorT;
 
-  /**
-   * pet response
-   */
-  @SpeakeasyMetadata()
-  pet?: shared.Pet;
+    /**
+     * pet response
+     */
+    @SpeakeasyMetadata()
+    pet?: shared.Pet;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }
