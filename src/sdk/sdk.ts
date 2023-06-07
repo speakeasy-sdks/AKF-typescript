@@ -39,8 +39,8 @@ export class SDKConfiguration {
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
-    sdkVersion = "1.15.0";
-    genVersion = "2.35.3";
+    sdkVersion = "1.15.1";
+    genVersion = "2.35.9";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -48,7 +48,7 @@ export class SDKConfiguration {
 }
 
 /**
- * A sample API that uses a petstore as an example to demonstrate features in the OpenAPI 3.0 specification
+ * Swagger Petstore: A sample API that uses a petstore as an example to demonstrate features in the OpenAPI 3.0 specification
  */
 export class SDK {
     private sdkConfiguration: SDKConfiguration;
