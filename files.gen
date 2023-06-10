@@ -27,5 +27,15 @@ src/sdk/models/shared/pet.ts
 src/sdk/models/shared/error.ts
 src/sdk/models/shared/newpet.ts
 src/sdk/models/shared/index.ts
-docs/sdk/README.md
+docs/sdks/sdk/README.md
 USAGE.md
+docs/models/operations/addpetresponse.md
+docs/models/operations/deletepetrequest.md
+docs/models/operations/deletepetresponse.md
+docs/models/operations/findpetbyidrequest.md
+docs/models/operations/findpetbyidresponse.md
+docs/models/operations/findpetsrequest.md
+docs/models/operations/findpetsresponse.md
+docs/models/shared/pet.md
+docs/models/shared/errort.md
+docs/models/shared/newpet.md
